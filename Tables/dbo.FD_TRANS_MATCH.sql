@@ -1,0 +1,16 @@
+CREATE TABLE [dbo].[FD_TRANS_MATCH]
+(
+[ETLSID] [varchar] (35) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
+[TRANS_NO] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[VMC] [bigint] NOT NULL,
+[MATCH] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[MATCH_PLG_AMT] [numeric] (18, 2) NULL,
+[MATCH_DON_AMT] [numeric] (18, 2) NULL,
+[ZID] [varchar] (15) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SOURCE_ID] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[EXPORT_DATETIME] [datetime] NULL,
+[ETL_Sync_DeltaHashKey] [binary] (32) NULL
+)
+GO
+ALTER TABLE [dbo].[FD_TRANS_MATCH] ADD CONSTRAINT [PK_FD_TRANS_MATCH] PRIMARY KEY CLUSTERED  ([ETLSID], [TRANS_NO], [VMC])
+GO

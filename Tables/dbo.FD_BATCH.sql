@@ -1,0 +1,24 @@
+CREATE TABLE [dbo].[FD_BATCH]
+(
+[ETLSID] [varchar] (35) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
+[BATCH] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[TYPE] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[STATUS] [varchar] (10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[NAME] [varchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[OPEN_DATE] [datetime] NULL,
+[EXPIRE_DATE] [datetime] NULL,
+[CLOSE_DATE] [datetime] NULL,
+[POST_DATE] [datetime] NULL,
+[DEPOSIT_DATE] [datetime] NULL,
+[LAST_USER] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[LAST_DATETIME] [datetime] NULL,
+[ZID] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SOURCE_ID] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[EXPORT_DATETIME] [datetime] NULL,
+[ETL_Sync_DeltaHashKey] [binary] (32) NULL
+)
+GO
+ALTER TABLE [dbo].[FD_BATCH] ADD CONSTRAINT [PK_FD_BATCH] PRIMARY KEY CLUSTERED  ([ETLSID], [BATCH])
+GO
+CREATE NONCLUSTERED INDEX [IDX_BATCH] ON [dbo].[FD_BATCH] ([BATCH])
+GO

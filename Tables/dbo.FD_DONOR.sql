@@ -1,0 +1,48 @@
+CREATE TABLE [dbo].[FD_DONOR]
+(
+[ETLSID] [varchar] (35) COLLATE SQL_Latin1_General_CP1_CS_AS NOT NULL,
+[DONOR] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL,
+[DONOR_TYPE] [varchar] (16) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[MAIL_ADTYPE] [varchar] (16) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[MAIL_CODE] [varchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[TAG_MARKS] [varchar] (2000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PUBLISH_NAME] [varchar] (512) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[COMMENTS] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[BILL_ADTYPE] [varchar] (16) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[YEARS_OF_DONATION] [int] NULL,
+[RANKING] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[PRIORITY_POINTS] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD1] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD2] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD3] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD4] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD5] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD6] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD7] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD8] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD9] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD10] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD11] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD12] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD13] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD14] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD15] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD16] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD17] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD18] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD19] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[UD20] [varchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[LAST_USER] [varchar] (32) COLLATE SQL_Latin1_General_CP1_CS_AS NULL,
+[LAST_DATETIME] [datetime] NULL,
+[ZID] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[SOURCE_ID] [varchar] (20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[EXPORT_DATETIME] [datetime] NULL,
+[ETL_Sync_DeltaHashKey] [binary] (32) NULL
+)
+GO
+ALTER TABLE [dbo].[FD_DONOR] ADD CONSTRAINT [PK_FD_DONOR] PRIMARY KEY CLUSTERED  ([ETLSID], [DONOR])
+GO
+CREATE NONCLUSTERED INDEX [IDX_DONOR] ON [dbo].[FD_DONOR] ([DONOR])
+GO
+CREATE NONCLUSTERED INDEX [IDX_DONOR_TYPE] ON [dbo].[FD_DONOR] ([DONOR_TYPE])
+GO

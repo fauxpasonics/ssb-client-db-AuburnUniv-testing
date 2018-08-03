@@ -1,0 +1,16 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+CREATE VIEW [ro].[vFD_Trans_Match] as
+select 
+ETLSID, TRANS_NO, VMC, MATCH, MATCH_PLG_AMT, MATCH_DON_AMT, ZID, SOURCE_ID, EXPORT_DATETIME, ETL_Sync_DeltaHashKey
+ from dbo.FD_Trans_Match (nolock)			as FT
+
+
+
+
+
+GO
